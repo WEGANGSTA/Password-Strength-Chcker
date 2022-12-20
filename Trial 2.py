@@ -7,6 +7,7 @@ score3 = 0
 score4 = 0
 score5 = 0
 score6 = 0
+score7 = 0
 
 #Check the password for specific characters  
 lowercase = False
@@ -24,7 +25,8 @@ for character in password:
   else: 
     character in "!@#$%^&*()-+."
     special_characters = True
-    
+
+# checking whether password is in the known passwords text file    
 with open(r'knownpasswords.txt', 'r') as file:
         # read all content from a file using read()
         content = file.read()
@@ -34,6 +36,17 @@ with open(r'knownpasswords.txt', 'r') as file:
         else:
             score6 = score6 + 1
             print('Your password is not well known.')
+
+# checking whether password is in the names text file
+with open(r'names.txt', 'r') as file:
+        # read all content from a file using read()
+        content = file.read()
+        # check if string present or not
+        if password in content:
+            print('Your password contains a name.')
+        else:
+            score7 = score7 + 1
+            print('Your password does not contain a name.')
     
 if lowercase == True:
   print("Your password contains at least one lowercase characters.")
@@ -57,8 +70,8 @@ if len(password)>=8:
   score5 = score5 + 1
   print("Your password is at least 8 characters long.")
 
-final_score = score1 + score2 + score3 + score4 + score5 +score6
-print("Final score out of 6 is" , final_score)
+final_score = score1 + score2 + score3 + score4 + score5 + score6 + score7
+print("Final score out of 7 is" , final_score)
 
 #Complete code here to check more criteria and display total score
 
