@@ -11,20 +11,28 @@ score7 = 0
 
 #Check the password for specific characters  
 lowercase = False
-uppercasssse = False
+uppercase = False
 number = False 
 special_characters = False 
 
 for character in password:  
-  if character in "abcdefghijklmnopqrstuvwxyz":  
-    lowercase = True
-  elif character in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
-    uppercase = True 
-  elif character in "0123456789":
-    number = True 
-  else: 
-    character in "!@#$%^&*()-+."
-    special_characters = True
+
+    if character in "abcdefghijklmnopqrstuvwxyz":  
+        lowercase = True
+    elif character in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        uppercase = True 
+    elif character in "0123456789":
+        number = True 
+    elif character in "!@#$%^&*()-+.":
+        special_characters = True
+
+
+#length = len(password)
+#passwordlist = [password]
+#for i in range(length):
+    #index = uppercase.index(passwordlist[i])
+    #if i + 2 == length:
+        #break
 
 # checking whether password is in the known passwords text file    
 with open(r'knownpasswords.txt', 'r') as file:
@@ -74,8 +82,3 @@ final_score = score1 + score2 + score3 + score4 + score5 + score6 + score7
 print("Final score out of 7 is" , final_score)
 
 #Complete code here to check more criteria and display total score
-
-#if username in password == True
-    #print(Password not valid due to username being used in it.)
-#else:
-    #print(Password does not include username)
