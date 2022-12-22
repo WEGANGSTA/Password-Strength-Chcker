@@ -2,8 +2,8 @@
 
 '''This is where the user gets to input their username and password.'''
 
-username = input("Type your username:")
-password = input("Type your password:")
+username = input("Please type your username:")
+password = input("Please type your password:")
 
 '''This section includes all used variables and conditions in the code.'''
 
@@ -126,18 +126,18 @@ of the password to the user as well as their final score.'''
 final_score = score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8 + score9
 
 if final_score <= 1:
-    print("Password is of very low strength.")
+    print("Password is of very low strength. :(")
 
 if final_score <= 3:
-    print("Password is of low strength.")
+    print("Password is of low strength. :(")
 
 if final_score <= 5:
     print("Password is of moderate strength.")
 
 if final_score <= 7:
-    print("Password is of high strength.")
+    print("Password is of high strength. :)")
 
 if final_score == 9:
-    print("Password is of very high strength.")
+    print("Password is of very high strength! Well done! :)")
 
 print("Final score out of 9 is" , final_score)
