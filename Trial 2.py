@@ -1,3 +1,5 @@
+#Completed by Abdullah ElMahdy and Mazen Khalid
+
 '''This is where the user gets to input their username and password.'''
 
 username = input("Type your username:")
