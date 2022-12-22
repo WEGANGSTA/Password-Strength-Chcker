@@ -41,8 +41,10 @@ for character in password:
     if character in "!@#$%^&*()-+.":
         special_characters = True
 
-'''This section checks whether the criteria has been met: 1 uppercase, 1 lowercase, 
-1 digit, 1 special character, and length is greater than or equal to 8'''
+'''This section checks whether the criteria has been met: 
+1 uppercase, 1 lowercase, 1 digit, 1 special character, and 
+length is greater than or equal to 8. Then it calculates a score
+and prints whether the user needs to add anything to meet the criteria'''
 
 if lowercase == True:
     score1 = score1 + 1
@@ -70,7 +72,9 @@ if len(password)>=8:
 else:
     print("Your password must contain at least 8 characters.")
 
-'''checking whether password is in the known passwords text file''' 
+'''The code checks whether password is in the 
+known passwords text file, calculates a score, and prints 
+whether the user needs to add anything to meet the criteria.''' 
 
 with open(r'knownpasswords.txt', 'r') as file:
         content = file.read()
@@ -80,7 +84,9 @@ with open(r'knownpasswords.txt', 'r') as file:
         else:
             score6 = score6 + 1
 
-'''checking whether password is in the names text file'''
+'''The code checks whether password is in the 
+names text file, calculates a score, and prints whether 
+the user needs to add anything to meet the criteria.'''
 
 with open(r'names.txt', 'r') as file:
         content = file.read()
@@ -90,14 +96,18 @@ with open(r'names.txt', 'r') as file:
         else:
             score7 = score7 + 1
 
-'''This is where the code tests whether the password is close or similar to the username'''
+'''This is where the code tests whether the password is close or 
+similar to the username, calculates a score, and prints whether 
+the user needs to add anything to meet the criteria.'''
 
 if username in password:  
   print('Your password must not contain username')
 else:
   score8 = score8 + 1
 
-'''This part of the code checks for repeated patterns in the password'''
+'''This part of the code checks for repeated patterns in 
+the password, calculates a score, and prints whether 
+the user needs to add anything to meet the criteria.'''
 
 for token in range(0,len(password)):
     if str(token) in password:
@@ -108,7 +118,8 @@ for token in range(0,len(password)):
 if repeated == False:
     score9 = score9 + 1
 
-'''Final Score calculator'''
+'''This section calculates the final score and prints the strength 
+of the password to the user as well as their final score.'''
 
 final_score = score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8 + score9
 
